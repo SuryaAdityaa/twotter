@@ -5,23 +5,27 @@
 </template>
 
 <script>
-import { UserProfile } from "./components/UserProfile";
+
+import UserProfile from "./components/UserProfile";
+
 export default {
   name: 'App',
-  components: {
-    UserProfile
-  }
+  components: { UserProfile },
 }
 </script>
 
 <style>
+* {
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  background-color: #f1f1f1;
+  height: 100vh;
 }
 </style>
