@@ -74,14 +74,14 @@ export default {
     },
     watch: {
         followers(newFollowerCount, oldFollowerCount) {
-        if (oldFollowerCount < newFollowerCount) {
-            console.log(`${this.user.username} has gained a follower!`);
-        }
+            if (oldFollowerCount < newFollowerCount) {
+                console.log(`${this.user.username} has gained a follower!`);
+            }
         }
     },
     computed: {
         fullName() {
-        return `${this.user.firstName} ${this.user.lastName}`
+            return `${this.user.firstName} ${this.user.lastName}`
         }
     },
     methods: {
@@ -97,6 +97,7 @@ export default {
                     id: this.user.twoots.length + 1,
                     content: this.newTwootContent,
                 })
+                this.newTwootContent = '';
             }
         }
     },
@@ -106,12 +107,13 @@ export default {
 }
 </script>
 
-<style>
-    .user-profile {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        padding: 50px 5%;
-    }
+<style lang="scss" scoped>
+.user-profile {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 50px 5%;
+    grid-gap: 50px;
+
     .user-profile__user-panel {
         display: flex;
         flex-direction: column;
@@ -120,27 +122,34 @@ export default {
         background-color: #fff;
         border-radius: 5px;
         border: 1px solid #DFE3E8;
-    }
-    .user-profile__admin-badge {
-        background: rebeccapurple;
-        color: #fff;
-        border-radius: 5px;
-        margin: 10px 0;
-        margin-right: auto;
-        padding: 0 10px;
-        font-weight: bold;
 
+        h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .user-profile__admin-badge {
+            background: rebeccapurple;
+            color: #fff;
+            border-radius: 5px;
+            margin: 10px 0;
+            margin-right: auto;
+            padding: 0 10px;
+            font-weight: bold;
+        }
+        
+        .user-profile__create-twoots {
+            margin: 20px 0 0;
+            padding: 20px 0 0;
+            widows: 100%;
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid #DFE3E8;
+        }
     }
-    h1 {
-        margin: 0;
-        font-size: 30px;
+    .user-profile__twoots-wrapper {
+        display: grid;
+        grid-gap: 10px;
     }
-    .user-profile__create-twoots {
-        margin: 20px 0 0;
-        padding: 20px 0 0;
-        widows: 100%;
-        display: flex;
-        flex-direction: column;
-        border-top: 1px solid #DFE3E8;
-    }
+}
 </style>
