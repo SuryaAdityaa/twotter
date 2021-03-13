@@ -42,7 +42,7 @@ export default {
         cursor: pointer;
         transition: all 0.25s ease;
         margin: 10px 10px 10px 0;
-        
+
         .twoot-item__user {
             font-weight: bold;
         }
