@@ -40,7 +40,7 @@ export default {
 
 nav {
   background-color: #2B806F;
-  padding: 30px;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   font-weight: bold;
@@ -54,11 +54,11 @@ nav {
     }
   }
   .navigation__logo {
-    font-size: 30px;
+    font-size: 18px;
     color: #fff;
   }
   .navigation__user {
-    font-size: 20px;
+    font-size: 15px;
     color: #fff;
   }
 }

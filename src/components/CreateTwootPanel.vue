@@ -18,7 +18,7 @@
                         </option>
                     </select>
                 </div>
-                <button>Twoot!</button>
+                <button>Twoot It!</button>
             </div>
         </form>
     </div>
@@ -58,53 +58,76 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.createTwootPanel {
+    margin: 50px 0;
 
-    .createTwootPanel {
-        margin: 50px 0;
+    .createTwootPanel__create-twoot {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
 
-        .createTwootPanel__create-twoot {
-            padding-top: 20px;
+        &.--exceeded {
+            color: red;
+            border-color: red;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .createTwootPanel__input {
             display: flex;
             flex-direction: column;
 
-            &.--exceeded {
-                color: red;
-                border-color: red;
+            textarea {
+                height: 200px;
+            }
+
+        }
+
+        .createTwootPanel__twoot-submit {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+
+            select {
+                padding: 10px 20px;
+                margin-left: 10px;
+            }
+
+            button {
+                background-color: #2B806F;
+                padding: 10px 30px;
+                cursor: pointer;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
                 font-weight: 700;
-                font-size: 18px;
             }
+        }
+    }
+}
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+    .createTwootPanel {
+        padding: 10px 0;
+        margin: 0 !important;
 
+        .createTwootPanel__create-twoot {
             .createTwootPanel__input {
-                display: flex;
-                flex-direction: column;
-
-                textarea {
-                    height: 200px;
-                }
-
+                height: 100px;
             }
-
             .createTwootPanel__twoot-submit {
-                display: flex;
-                justify-content: space-between;
-                margin: 30px 0;
-
-                select {
-                    padding: 10px 20px;
-                    margin-left: 10px;
+                margin: 10px 0 !important;
+                
+                .createTwootPanel__twoot-type {
+                    select {
+                        margin: 0;
+                    }
                 }
-
                 button {
-                    background-color: #2B806F;
-                    padding: 10px 30px;
-                    cursor: pointer;
-                    color: #fff;
-                    border: none;
-                    border-radius: 5px;
-                    font-weight: 700;
+                    padding: 10px 20px;
                 }
             }
         }
     }
-    
+}
 </style>

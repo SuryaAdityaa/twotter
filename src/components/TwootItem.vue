@@ -47,9 +47,12 @@ export default {
             transform: scale(1.05, 1.05);
         }
         .twoot-item__user {
-            font-size: 30px;
+            font-size: 18px;
             font-weight: 700;
             margin-bottom: 20px;
+        }
+        .twoot-item__content {
+            font-size: 15px;
         }
     }
     

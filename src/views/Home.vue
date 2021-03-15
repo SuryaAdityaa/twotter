@@ -3,7 +3,7 @@
     <h1>All Users</h1>
     <div class="users-list">
       <router-link v-for="user in users" :to="{ name: 'UserProfile', params: { userId: user.id } }" :key="user.id">
-        {{ user.username }}
+        @{{ user.username }}
       </router-link>
     </div>
   </div>
@@ -30,6 +30,12 @@ export default {
     .users-list {
       display: flex;
       flex-direction: column;
+      text-transform: capitalize;
+
+      a {
+        display: inline-block;
+        margin: 15px 0 !important;
+      }
     }
   }
 </style>

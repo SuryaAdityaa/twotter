@@ -107,5 +107,15 @@ export default {
         flex-direction: column;
     }
 }  
-
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+    .user-profile {
+        display: flex !important;
+        flex-direction: column;
+        
+        .user-profile__user-panel {
+            margin: 0;
+        }
+    }
+}
 </style>
