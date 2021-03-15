@@ -4,7 +4,7 @@
       <router-link to="/">
         <div class="navigation__logo">Twotter</div>
       </router-link>
-      <div class="navigation__user">{{ state.user.username }}</div>
+      <div class="navigation__user" v-if="user"> @{{ user.username }} </div>
     </nav>
     <router-view />
   </div>
@@ -12,19 +12,17 @@
 
 <script>
 
-import {reactive} from 'vue';
+import {useStore} from 'vuex';
+import {computed} from 'vue';
 
 export default {
   name: "App",
   setup() {
-    const state = reactive({
-      user: {
-        username: '@suryaaditya'
-      }
-    })
+    const store = useStore();
+    const user = computed(() => store.state.User.user);
 
     return {
-      state
+      user
     }
   }
 }
@@ -40,16 +38,28 @@ export default {
   min-height: 100vh;
 }
 
-#nav {
+nav {
+  background-color: #2B806F;
   padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+
 
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+  .navigation__logo {
+    font-size: 30px;
+    color: #fff;
+  }
+  .navigation__user {
+    font-size: 20px;
+    color: #fff;
   }
 }
 </style>

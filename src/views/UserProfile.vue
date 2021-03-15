@@ -92,7 +92,7 @@ export default {
                 font-size: 30px;
             }
             .user-profile__admin-badge {
-                background: rebeccapurple;
+                background: #2B806F;
                 color: #fff;
                 border-radius: 5px;
                 margin: 10px 0;
@@ -103,8 +103,8 @@ export default {
         }
     }
     .user-profile__twoots-wrapper {
-        display: grid;
-        grid-gap: 30px;
+        display: flex;
+        flex-direction: column;
     }
 }  
 

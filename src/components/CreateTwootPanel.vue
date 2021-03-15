@@ -77,6 +77,11 @@ export default {
             .createTwootPanel__input {
                 display: flex;
                 flex-direction: column;
+
+                textarea {
+                    height: 200px;
+                }
+
             }
 
             .createTwootPanel__twoot-submit {
@@ -84,12 +89,19 @@ export default {
                 justify-content: space-between;
                 margin: 30px 0;
 
-                button {
-                    background-color: rebeccapurple;
+                select {
                     padding: 10px 20px;
+                    margin-left: 10px;
+                }
+
+                button {
+                    background-color: #2B806F;
+                    padding: 10px 30px;
                     cursor: pointer;
                     color: #fff;
                     border: none;
+                    border-radius: 5px;
+                    font-weight: 700;
                 }
             }
         }

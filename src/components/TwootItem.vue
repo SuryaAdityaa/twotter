@@ -41,6 +41,7 @@ export default {
         text-align: left;
         cursor: pointer;
         border: 1px solid #eee;
+        margin-bottom: 20px;
          
         &:hover {
             transform: scale(1.05, 1.05);
@@ -48,6 +49,7 @@ export default {
         .twoot-item__user {
             font-size: 30px;
             font-weight: 700;
+            margin-bottom: 20px;
         }
     }
     
