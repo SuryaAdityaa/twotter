@@ -86,6 +86,7 @@ export default {
         .createTwootPanel__twoot-submit {
             display: flex;
             justify-content: space-between;
+            flex-direction: column;
             margin: 30px 0;
 
             select {
@@ -101,6 +102,7 @@ export default {
                 border: none;
                 border-radius: 5px;
                 font-weight: 700;
+                margin-top: 20px;
             }
         }
     }
@@ -112,7 +114,7 @@ $breakpoint-tablet: 768px;
         margin: 0 !important;
 
         .createTwootPanel__create-twoot {
-            
+
             .createTwootPanel__input {
                 height: 100px;
             }
