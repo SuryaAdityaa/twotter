@@ -41,7 +41,7 @@ export default {
         text-align: left;
         cursor: pointer;
         border: 1px solid #eee;
-        
+         
         &:hover {
             transform: scale(1.05, 1.05);
         }
