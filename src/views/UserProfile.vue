@@ -31,27 +31,25 @@
 
 <script>
 
-import TwootItem from "./TwootItem";
-import CreateTwootPanel from "./CreateTwootPanel"
-import { reactive } from '@vue/reactivity';
+import TwootItem from "../components/TwootItem";
+import { useRoute } from "vue-router";
+import CreateTwootPanel from "../components/CreateTwootPanel";
+import {users} from "../assets/users";
+import { reactive, computed } from '@vue/reactivity';
 
 export default {
     name: "UserProfile",
     components: { TwootItem, CreateTwootPanel },
     setup() {
+
+        const route = useRoute();
+        const userId = computed(() => route.params.userId);
+
+        // If (userId) fetchUserFromApi(userId)
+
         const state = reactive({
             followers: 0,
-            user: {
-                username: 'suryaaditya',
-                firstName: 'Surya',
-                lastName: 'Aditya',
-                email: 'me@suryaaditya.com',
-                isAdmin: true,
-                twoots: [
-                    {id: 1, content: "Twotter is amazing"},
-                    {id: 2, content: "Twotter is not amazing"},
-                ],
-            },
+            user: users[userId.value - 1] || users[1]
             
         })
 
@@ -64,53 +62,50 @@ export default {
 
         return {
             state,
-            addTwoot
+            addTwoot,
+            userId,
         }
     },
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .user-profile {
     display: grid;
     grid-template-columns: 1fr 3fr;
     padding: 50px 5%;
     grid-gap: 50px;
-}
-.user-profile__user-panel { 
-    margin-right: 50px;
-}
-.user-profile__info {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    border: 1px solid #DFE3E8;     
-    background-color: #fff;
-}
-h1 {
-    margin: 0;
-    font-size: 30px;
-}  
-.user-profile__admin-badge {
-    background: rebeccapurple;
-    color: #fff;
-    border-radius: 5px;
-    margin: 10px 0;
-    margin-right: auto;
-    padding: 0 10px;
-    font-weight: bold;
-}
-.user-profile__create-twoots {
-    margin: 20px 0 0;
-    padding: 20px 0 0;
-    widows: 100%;
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid #DFE3E8;
-}
-.user-profile__twoots-wrapper {
-        display: grid;
-        grid-gap: 10px;
+
+    .user-profile__user-panel { 
+        margin-right: 50px;
+
+        .user-profile__info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            border: 1px solid #DFE3E8;     
+            background-color: #fff;
+
+            h1 {
+                margin: 0;
+                font-size: 30px;
+            }
+            .user-profile__admin-badge {
+                background: rebeccapurple;
+                color: #fff;
+                border-radius: 5px;
+                margin: 10px 0;
+                margin-right: auto;
+                padding: 0 10px;
+                font-weight: bold;
+            }
+        }
     }
+    .user-profile__twoots-wrapper {
+        display: grid;
+        grid-gap: 30px;
+    }
+}  
+
 </style>

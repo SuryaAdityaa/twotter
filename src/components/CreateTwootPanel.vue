@@ -1,8 +1,8 @@
 <template>
     <div class="createTwootPanel">
-        <form action="" class="createTwootPanel__create-twoots" @submit.prevent="createNewTwoot">
+        <form class="createTwootPanel__create-twoot" @submit.prevent="createNewTwoot" :class="{ '--exceeded': newTwootCharacterCount > 180 }">
             <div class="createTwootPanel__input">
-                <label for="newTwoot"> New Twoot </label>
+                <label for="newTwoot"> New Twoot {{ newTwootCharacterCount }} / 180</label>
                 <textarea rows="4" id="newTwoot" v-model="state.newTwootContent"/>
             </div>
 
@@ -57,29 +57,42 @@ export default {
 }
 </script>
 
-<style scoped>
-    label {
-        font-weight: 700;
-        font-size: 18px;
-    }
+<style lang="scss" scoped>
 
     .createTwootPanel {
         margin: 50px 0;
+
+        .createTwootPanel__create-twoot {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+
+            &.--exceeded {
+                color: red;
+                border-color: red;
+                font-weight: 700;
+                font-size: 18px;
+            }
+
+            .createTwootPanel__input {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .createTwootPanel__twoot-submit {
+                display: flex;
+                justify-content: space-between;
+                margin: 30px 0;
+
+                button {
+                    background-color: rebeccapurple;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    color: #fff;
+                    border: none;
+                }
+            }
+        }
     }
-    .createTwootPanel__input {
-        display: flex;
-        flex-direction: column;
-    }
-    .createTwootPanel__twoot-submit {
-        display: flex;
-        justify-content: space-between;
-        margin: 30px 0;
-    }
-    .createTwootPanel__twoot-submit > button {
-        background-color: rebeccapurple;
-        padding: 10px 20px;
-        cursor: pointer;
-        color: #fff;
-        border: none;
-    }
+    
 </style>
