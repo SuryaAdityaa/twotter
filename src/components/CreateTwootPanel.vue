@@ -112,12 +112,13 @@ $breakpoint-tablet: 768px;
         margin: 0 !important;
 
         .createTwootPanel__create-twoot {
+            
             .createTwootPanel__input {
                 height: 100px;
             }
             .createTwootPanel__twoot-submit {
                 margin: 10px 0 !important;
-                
+
                 .createTwootPanel__twoot-type {
                     select {
                         margin: 0;
