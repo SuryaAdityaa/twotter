@@ -109,6 +109,7 @@ export default {
 }
 $breakpoint-tablet: 768px;
 @media (max-width: $breakpoint-tablet) {
+    
     .createTwootPanel {
         padding: 10px 0;
         margin: 0 !important;
